@@ -22,7 +22,7 @@ server:
 
 spring:
   rabbitmq:
-    host: ${server.address}
+    host: 188.212.125.157
     port: 5672
     username: admin
     password: Zerkalo82
