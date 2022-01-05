@@ -34,6 +34,36 @@ spring:
       trust-store-password: ${server.ssl.trust-store-password}
     virtual-host: /
 
+  boot:
+    admin:
+      client:
+        enabled: true
+#        урл админки (из контейнера торчит 5555, но nginx перенаправляет на 8000)!!!
+        url: https://solnce52004.ga:5555
+        instance:
+#        урл клиента (из контейнера торчит 8002)
+#          обязательный путь для отображения всех метрик и графиков
+#          в соответствии с настройками маски в настройках ниже
+          management-url: https://solnce52004.ga:8002/actuator
+#          обязательный путь для получения метрик
+          health-url: https://solnce52004.ga:8002/actuator/health
+#          необязательное название клиента для отображения в админке
+          name: "rabbitMQ producer"
+#          обязательный путь к метрикам клиента
+          service-path: /actuator
+#          домашняя страница сервиса (данного клиента)
+          service-url: https://solnce52004.ga:8002
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
 logging:
   config: "classpath:log4j2.properties"
   level:
