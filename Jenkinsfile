@@ -3,7 +3,7 @@ pipeline {
     environment {
         registry = "solnce52004/test12_rabbit_consumer"
         registryCredential = 'dockerhub'
-        containerName = 'container'
+        containerName = 'container_test12_rabbit_consumer'
     }
 
     agent any
