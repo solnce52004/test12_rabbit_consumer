@@ -48,7 +48,7 @@ spring:
 #          обязательный путь для получения метрик
           health-url: https://solnce52004.ga:8002/actuator/health
 #          необязательное название клиента для отображения в админке
-          name: "rabbitMQ producer"
+          name: "rabbitMQ consumer"
 #          обязательный путь к метрикам клиента
           service-path: /actuator
 #          домашняя страница сервиса (данного клиента)
